@@ -3,12 +3,14 @@
 //The asyncHandler function solves this by catching errors and forwarding them to the next middleware (usually an error-handling middleware)
 const asyncHandler = (requestHandler) => {
 
-    (req, resp, next) => {
+    return (req, resp, next) => {
         Promise.resolve(requestHandler(req, resp, next)).
         catch((error) => next(error))
     }
 
 }
+
+export {asyncHandler}
 
 
 

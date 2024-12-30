@@ -16,4 +16,14 @@ app.use(express.static("public")) //It says that whatever static file like pdf, 
 
 app.use(cookieParser()) //we allow cookies and perform crud operation on these cookies
 
+
+//routes import
+import userRouter from "./routes/user.router.js";
+
+
+//router declaration
+app.use("/api/v1/users", userRouter); //whenever someone click /user route it gives control to userRouter
+
+//how route look like : localhost:8000/api/v1/users
+
 export {app}
