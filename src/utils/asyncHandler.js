@@ -13,9 +13,6 @@ const asyncHandler = (requestHandler) => {
 export {asyncHandler}
 
 
-
-
-
 // const asyncHandler = () => {}
 // const asyncHandler = (func) => { () => {} } //we just remove the brackets
 // const asyncHandler = (func) => async () => {}

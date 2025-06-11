@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
+import bodyParser from "body-parser";
 
 const app = express()
 
@@ -8,6 +9,8 @@ app.use(cors({
     origin : process.env.CORS_ORIGIN,// from where you can access our backend
     credentials : true
 }))
+
+app.use(bodyParser.json());
 
 //Configurations
 app.use(express.json({limit:"16kb"}))// This line says that we can accept the json data( limit specify you can only send 16kb of json data)

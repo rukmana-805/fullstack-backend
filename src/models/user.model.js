@@ -1,6 +1,5 @@
 import mongoose, {Schema} from "mongoose";
 
-//
 import jwt from "jsonwebtoken";
 
 //Used for encription
@@ -55,7 +54,7 @@ const userSchema = new Schema({
 userSchema.pre("save", async function (next) {
     if(!this.isModified("password")) return next();// if password not modified to to next but if modified then again hash it
 
-    this.password = bcrypt.hash(this.password, 10)//this encript the user password
+    this.password = await bcrypt.hash(this.password, 10)//this encript the user password
     next()
 })
 //This save method already present in the mongoose there are other method also check it out on the website
